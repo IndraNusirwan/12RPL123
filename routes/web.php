@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InboxController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/inbox', [InboxController::class,'index']);
+
+Route::get('/send', function () {
+    return view('send.index');
 });
